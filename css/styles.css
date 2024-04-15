@@ -4,9 +4,12 @@ body {
   background-color: #fafafa;
   color: #111111;
 }
+.accent-color {
+  color: #fd9222;
+}
 ul,
 ol {
-  list-style: none;
+  list-style-type: none;
 }
 a {
   text-decoration: none;
@@ -98,9 +101,6 @@ button {
   text-transform: uppercase;
   text-align: center;
 }
-.page-ingredients-title-part {
-  color: #fd9222;
-}
 .page-ingredients-title-description {
   font-size: 14px;
   line-height: 1.29;
@@ -147,9 +147,6 @@ button {
   text-transform: uppercase;
   text-align: center;
 }
-.page-how-made-title-part {
-  color: #fd9222;
-}
 .page-how-made-list-container {
   background-color: #ffffff;
 }
@@ -172,9 +169,6 @@ button {
   letter-spacing: -0.03em;
   text-transform: uppercase;
   text-align: center;
-}
-.page-reviews-title-part {
-  color: #fd9222;
 }
 .page-reviews-item-container {
   box-shadow: 0 9px 100px 0 rgba(17, 17, 17, 0.03);
@@ -213,9 +207,6 @@ button {
   line-height: 1.25;
   letter-spacing: -0.02em;
   color: #ffffff;
-}
-.page-footer-title-part {
-  color: #fd9222;
 }
 .page-footer-address {
   font-style: normal;

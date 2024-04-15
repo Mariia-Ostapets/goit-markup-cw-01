@@ -1,0 +1,244 @@
+/* GLOBAL STYLES */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fafafa;
+  color: #111111;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+/* HEADER STYLES */
+.page-logo {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.11;
+  letter-spacing: -0.03em;
+}
+.page-logo-part {
+  font-style: italic;
+}
+.page-nav-list {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+}
+.page-nav-link:hover,
+.page-nav-link:focus {
+  color: #fd9222;
+}
+/* HERO STYLES */
+.page-hero {
+  background-color: #1e1823;
+}
+.page-hero-title {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.21;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+.page-hero-button {
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #fd9222;
+}
+.page-hero-link {
+  font-weight: 600;
+  font-size: 14px;
+  color: #ffffff;
+}
+.page-hero-scroll {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+.page-hero-button:hover,
+.page-hero-button:focus {
+  color: #fd9222;
+  background-color: #fcf1e0;
+}
+.page-hero-link:hover,
+.page-hero-link:focus {
+  color: #fd9222;
+  background-color: #ffffff;
+}
+/* BENEFITS STYLES */
+.page-benefits {
+  background-color: #1e1823;
+}
+.benefits-item-name {
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffffff;
+}
+.benefits-item-description {
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.7);
+}
+/* INGREDIENTS STYLES */
+.page-ingredients-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.page-ingredients-title-part {
+  color: #fd9222;
+}
+.page-ingredients-title-description {
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+.page-ingredients-list {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.page-ingredients-item-milk-chocolate {
+  background-color: #fd9222;
+}
+.page-ingredients-item-milk-chocolate-title {
+  color: #ffffff;
+}
+.page-ingredients-item-milk {
+  background-color: #ffffff;
+}
+.page-ingredients-item-milk-title {
+  color: #111111;
+}
+.page-ingredients-item-nuts {
+  background-color: #1e1823;
+}
+.page-ingredients-item-nuts-title {
+  color: #ffffff;
+}
+.page-ingredients-semi-sweet-chocolate {
+  background-color: #ffffff;
+}
+.page-ingredients-semi-sweet-chocolate-title {
+  color: #111111;
+}
+/* HOW IT’S MADE? STYLES */
+.page-how-made-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.page-how-made-title-part {
+  color: #fd9222;
+}
+.page-how-made-list-container {
+  background-color: #ffffff;
+}
+.page-how-made-list-title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33;
+}
+.page-how-made-item {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+}
+/* REVIEWS STYLES */
+.page-reviews-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.page-reviews-title-part {
+  color: #fd9222;
+}
+.page-reviews-item-container {
+  box-shadow: 0 9px 100px 0 rgba(17, 17, 17, 0.03);
+  background: #ffffff;
+}
+.page-reviews-item-name {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33;
+  text-align: center;
+}
+.page-reviews-item-description {
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: rgba(17, 17, 17, 0.7);
+}
+.page-reviews-button {
+  font-weight: 600;
+  font-size: 18px;
+  color: #111111;
+}
+.page-reviews-button:hover,
+.page-reviews-button:focus {
+  color: #ffffff;
+  background-color: #fd9222;
+}
+/* FOOTER STYLES */
+.page-footer {
+  background-color: #1e1823;
+}
+.page-footer-title {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+.page-footer-title-part {
+  color: #fd9222;
+}
+.page-footer-address {
+  font-style: normal;
+}
+.page-footer-address-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  text-align: center;
+  color: #ffffff;
+}
+.page-footer-address-link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #ffffff;
+}
+.page-footer-nav-list {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}

@@ -78,6 +78,11 @@ button {
   color: #fd9222;
   background-color: #ffffff;
 }
+.page-hero-scroll:hover,
+.page-hero-scroll:focus {
+  color: #fd9222;
+  background-color: #ffffff;
+}
 /* BENEFITS STYLES */
 .page-benefits {
   background-color: #1e1823;
@@ -225,6 +230,10 @@ button {
   letter-spacing: -0.02em;
   text-align: center;
   color: #ffffff;
+}
+.page-footer-address-link:hover,
+.page-footer-address-link:focus {
+  color: #fd9222;
 }
 .page-footer-nav-list {
   font-weight: 500;

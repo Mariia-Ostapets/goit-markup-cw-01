@@ -10,6 +10,20 @@ body {
 ul,
 ol {
   list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 a {
   text-decoration: none;
@@ -19,7 +33,45 @@ button {
   cursor: pointer;
   font-family: inherit;
 }
+img {
+  display: block;
+}
+.container {
+  max-width: 1168px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.section-paddings {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.17;
+  letter-spacing: -0.03em;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
 /* HEADER STYLES */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .page-logo {
   font-weight: 700;
   font-size: 18px;
@@ -30,10 +82,16 @@ button {
   font-style: italic;
 }
 .page-nav-list {
+  display: flex;
+  gap: 24px;
+}
+.page-nav-link {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: -0.02em;
+  display: inline-block;
+  padding: 30px 0;
 }
 .page-nav-link:hover,
 .page-nav-link:focus {
@@ -42,6 +100,10 @@ button {
 /* HERO STYLES */
 .page-hero {
   background-color: #1e1823;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 30px;
+  padding: 381px 72px 40px;
 }
 .page-hero-title {
   font-weight: 500;
@@ -49,17 +111,39 @@ button {
   line-height: 1.21;
   letter-spacing: -0.03em;
   color: #ffffff;
+  max-width: 464px;
+  margin-bottom: 32px;
+}
+.page-hero-wrapper {
+  display: flex;
+  align-items: center;
 }
 .page-hero-button {
   font-weight: 600;
   font-size: 14px;
   color: #ffffff;
   background-color: #fd9222;
+  min-width: 144px;
+  height: 45px;
+  border-radius: 100px;
+  padding: 14px 40px;
+  border: none;
+  margin-right: 14px;
 }
 .page-hero-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 600;
   font-size: 14px;
   color: #ffffff;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  text-align: center;
+  min-width: 183px;
+  height: 45px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .page-hero-scroll {
   font-weight: 500;
@@ -67,6 +151,7 @@ button {
   line-height: 1.2;
   letter-spacing: -0.03em;
   color: #ffffff;
+  margin-left: auto;
 }
 .page-hero-button:hover,
 .page-hero-button:focus {
@@ -76,89 +161,111 @@ button {
 .page-hero-link:hover,
 .page-hero-link:focus {
   color: #fd9222;
-  background-color: #ffffff;
+  border-color: #fd9222;
 }
 .page-hero-scroll:hover,
 .page-hero-scroll:focus {
   color: #fd9222;
-  background-color: #ffffff;
 }
 /* BENEFITS STYLES */
 .page-benefits {
   background-color: #1e1823;
+  margin-top: 72px;
+  margin-bottom: 50px;
+  padding: 50px 68px;
+}
+.benefits-list {
+  display: flex;
+  gap: 70px;
+}
+.benefits-list-item {
+  width: calc((100%-70 * 2) / 3);
 }
 .benefits-item-name {
   font-weight: 600;
   font-size: 18px;
   color: #ffffff;
+  margin-bottom: 18px;
 }
 .benefits-item-description {
   font-size: 14px;
   letter-spacing: -0.02em;
+  line-height: 1.29;
   color: rgba(255, 255, 255, 0.7);
 }
+
 /* INGREDIENTS STYLES */
+
 .page-ingredients-title {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1.17;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  text-align: center;
+  max-width: 412px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 28px;
 }
 .page-ingredients-title-description {
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.02em;
   text-align: center;
+  max-width: 486px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
 }
 .page-ingredients-list {
+  display: flex;
+  flex-wrap: wrap; /*?????????????*/
+  column-gap: 19px; /*?????????????*/
+  justify-content: space-between; /*чому немає??*/
+}
+.page-ingredients-list-item {
+  width: calc((100% - 19 * 3) / 4);
+  border-radius: 15px;
+  border: 1px solid #fd9222;
+  padding: 32px 28px;
+}
+.page-ingredients-list-item-img {
+  margin-bottom: 36px;
+}
+.page-ingredients-list-item-title {
   font-weight: 600;
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.02em;
   text-transform: uppercase;
 }
-.page-ingredients-item-milk-chocolate {
+.page-ingredients-list-item:nth-child(even) {
+  background-color: #ffffff;
+}
+.page-ingredients-list-item:nth-child(4n + 1) {
   background-color: #fd9222;
-}
-.page-ingredients-item-milk-chocolate-title {
   color: #ffffff;
 }
-.page-ingredients-item-milk {
-  background-color: #ffffff;
-}
-.page-ingredients-item-milk-title {
-  color: #111111;
-}
-.page-ingredients-item-nuts {
+.page-ingredients-item:nth-child(4n-1) {
   background-color: #1e1823;
-}
-.page-ingredients-item-nuts-title {
   color: #ffffff;
-}
-.page-ingredients-semi-sweet-chocolate {
-  background-color: #ffffff;
-}
-.page-ingredients-semi-sweet-chocolate-title {
-  color: #111111;
+  border-color: #1e1823;
 }
 /* HOW IT’S MADE? STYLES */
-.page-how-made-title {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1.17;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  text-align: center;
+
+.page-how-made-wrapper {
+  display: flex;
+  column-gap: 20px; /*чому не просто gap??*/
+}
+.page-how-made-img {
+  border-radius: 15px;
 }
 .page-how-made-list-container {
-  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
 }
 .page-how-made-list-title {
   font-weight: 600;
   font-size: 18px;
   line-height: 1.33;
+  margin-bottom: 28px;
+  max-width: 350px;
 }
 .page-how-made-item {
   font-weight: 400;

@@ -32,6 +32,7 @@ a {
 button {
   cursor: pointer;
   font-family: inherit;
+  color: inherit;
 }
 img {
   display: block;
@@ -83,14 +84,14 @@ img {
 }
 .page-nav-list {
   display: flex;
-  gap: 24px;
+  column-gap: 24px; /*Чому не gap?*/
 }
 .page-nav-link {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: -0.02em;
-  display: inline-block;
+  display: block; /*Чому block, а не inline-block?*/
   padding: 30px 0;
 }
 .page-nav-link:hover,
@@ -103,14 +104,16 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   border-radius: 30px;
-  padding: 381px 72px 40px;
+}
+.page-hero-container {
+  padding: 381px 72px 40px; /*Чому падінги до контейнера, а не до секції, як в ДЗ?*/
+  color: #ffffff;
 }
 .page-hero-title {
   font-weight: 500;
   font-size: 28px;
   line-height: 1.21;
   letter-spacing: -0.03em;
-  color: #ffffff;
   max-width: 464px;
   margin-bottom: 32px;
 }
@@ -121,7 +124,6 @@ img {
 .page-hero-button {
   font-weight: 600;
   font-size: 14px;
-  color: #ffffff;
   background-color: #fd9222;
   min-width: 144px;
   height: 45px;
@@ -136,21 +138,19 @@ img {
   align-items: center;
   font-weight: 600;
   font-size: 14px;
-  color: #ffffff;
   border: 1px solid #fff;
   border-radius: 100px;
   text-align: center;
   min-width: 183px;
   height: 45px;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .page-hero-scroll {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.2;
   letter-spacing: -0.03em;
-  color: #ffffff;
   margin-left: auto;
 }
 .page-hero-button:hover,
@@ -170,21 +170,26 @@ img {
 /* BENEFITS STYLES */
 .page-benefits {
   background-color: #1e1823;
+  color: #ffffff;
   margin-top: 72px;
   margin-bottom: 50px;
-  padding: 50px 68px;
+  padding: 50px;
+}
+.benefits-container {
+  padding-left: 34px; /*Чому 34, а не 68, як в макеті?*/
+  padding-right: 34px; /*Чому 34, а не 68, як в макеті?*/
+  /* Чому гориз. падінги до контейнера, а не до секції? */
 }
 .benefits-list {
   display: flex;
-  gap: 70px;
+  column-gap: 88px; /*Чому 88, а не 70? Чому column-gap, а не gap? */
 }
 .benefits-list-item {
-  width: calc((100%-70 * 2) / 3);
+  width: calc((100%-2 * 88px) / 3);
 }
 .benefits-item-name {
   font-weight: 600;
   font-size: 18px;
-  color: #ffffff;
   margin-bottom: 18px;
 }
 .benefits-item-description {
@@ -193,9 +198,7 @@ img {
   line-height: 1.29;
   color: rgba(255, 255, 255, 0.7);
 }
-
 /* INGREDIENTS STYLES */
-
 .page-ingredients-title {
   max-width: 412px;
   margin-left: auto;
@@ -214,12 +217,12 @@ img {
 }
 .page-ingredients-list {
   display: flex;
-  flex-wrap: wrap; /*?????????????*/
-  column-gap: 19px; /*?????????????*/
-  justify-content: space-between; /*чому немає??*/
+  flex-wrap: wrap; /*Навіщо, якщо 1 рядок?*/
+  column-gap: 19px; /*Чому column-gap, а не gap?*/
+  justify-content: space-between;
 }
 .page-ingredients-list-item {
-  width: calc((100% - 19 * 3) / 4);
+  width: calc((100% - 3 * 19px) / 4);
   border-radius: 15px;
   border: 1px solid #fd9222;
   padding: 32px 28px;
@@ -247,52 +250,65 @@ img {
   border-color: #1e1823;
 }
 /* HOW IT’S MADE? STYLES */
-
 .page-how-made-wrapper {
   display: flex;
-  column-gap: 20px; /*чому не просто gap??*/
-}
-.page-how-made-img {
-  border-radius: 15px;
+  column-gap: 20px; /*Чому column-gap, а не gap?*/
 }
 .page-how-made-list-container {
-  display: flex;
-  flex-direction: column;
+  flex-grow: 1;
   padding: 32px;
+  border-radius: 15px;
+  background-color: #ffffff;
 }
 .page-how-made-list-title {
   font-weight: 600;
   font-size: 18px;
   line-height: 1.33;
   margin-bottom: 28px;
-  max-width: 350px;
 }
-.page-how-made-item {
-  font-weight: 400;
+.page-how-made-list {
+  padding-right: 32px;
+}
+.page-how-made-list-item {
+  font-weight: 400; /*Для тексту в li за замовч 400px так як і для р?*/
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.02em;
 }
+.page-how-made-list-item:not(:last-child) {
+  margin-bottom: 24px;
+}
 /* REVIEWS STYLES */
-.page-reviews-title {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1.17;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  text-align: center;
+.page-reviews {
+  padding-bottom: 100px;
 }
-.page-reviews-item-container {
+.page-reviews-list {
+  display: flex;
+  column-gap: 28px; /*Чому не gap і justify-content: space-between?*/
+  margin-bottom: 50px;
+  justify-content: space-between;
+}
+.page-reviews-list-item {
+  width: calc((100% - 56px) / 3);
+  padding: 56px 24px 24px;
   box-shadow: 0 9px 100px 0 rgba(17, 17, 17, 0.03);
-  background: #ffffff;
+  background-color: #ffffff;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 15px;
 }
-.page-reviews-item-name {
+.page-reviews-list-item-img {
+  margin-bottom: 18px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page-reviews-list-item-name {
   font-weight: 600;
   font-size: 18px;
   line-height: 1.33;
   text-align: center;
+  margin-bottom: 24px;
 }
-.page-reviews-item-description {
+.page-reviews-list-item-description {
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.02em;
@@ -303,6 +319,15 @@ img {
   font-weight: 600;
   font-size: 18px;
   color: #111111;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  padding: 14px 40px;
+  min-width: 222px;
+  border: 1px solid #fd9222;
+  border-radius: 100px;
+  background-color: #fafafa;
 }
 .page-reviews-button:hover,
 .page-reviews-button:focus {
@@ -312,13 +337,22 @@ img {
 /* FOOTER STYLES */
 .page-footer {
   background-color: #1e1823;
+  color: #ffffff;
+  padding-top: 50px;
+  padding-bottom: 50px; /*Чому не 86px як в макеті?*/
+}
+.page-footer-top-block {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .page-footer-title {
   font-weight: 500;
   font-size: 28px;
-  line-height: 1.25;
+  line-height: 1.21;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  max-width: 300px;
 }
 .page-footer-address {
   font-style: normal;
@@ -327,25 +361,21 @@ img {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.29;
-  text-align: center;
-  color: #ffffff;
+  margin-bottom: 14px;
 }
-.page-footer-address-link {
-  font-weight: 400;
+.page-footer-address-list-item:not(:last-child) {
+  margin-bottom: 4px;
+}
+.page-footer-address-list-item-link {
+  font-weight: 400; /*Для тексту в а за замовч 400 так як і для р?*/
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.02em;
-  text-align: center;
-  color: #ffffff;
 }
-.page-footer-address-link:hover,
-.page-footer-address-link:focus {
+.page-footer-address-list-item-link:hover,
+.page-footer-address-list-item-link:focus {
   color: #fd9222;
 }
-.page-footer-nav-list {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: -0.02em;
-  color: #ffffff;
+.page-footer-bottom-block {
+  padding-top: 24px;
 }

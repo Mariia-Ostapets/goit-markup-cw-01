@@ -68,12 +68,20 @@ img {
   margin-bottom: 50px;
 }
 /* HEADER STYLES */
+.page-header-container {
+  display: flex;
+  align-items: center;
+  column-gap: 90px;
+}
 .page-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-grow: 1;
 }
 .page-logo {
+  display: flex;
+  align-items: center;
   font-weight: 700;
   font-size: 18px;
   line-height: 1.11;
@@ -82,9 +90,12 @@ img {
 .page-logo-part {
   font-style: italic;
 }
+.page-logo-icon {
+  margin-left: 4px;
+}
 .page-nav-list {
   display: flex;
-  column-gap: 24px; /*Чому не gap?*/
+  column-gap: 24px;
 }
 .page-nav-link {
   font-weight: 500;
@@ -93,10 +104,26 @@ img {
   letter-spacing: -0.02em;
   display: block; /*Чому block, а не inline-block?*/
   padding: 30px 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .page-nav-link:hover,
 .page-nav-link:focus {
   color: #fd9222;
+}
+.page-header-network-list {
+  display: flex;
+  gap: 18px;
+}
+.page-header-network-link {
+  display: block;
+  line-height: 0;
+  stroke: #111111;
+  fill: none;
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.page-header-network-link:hover,
+.page-header-network-link:focus {
+  stroke: #fd9222;
 }
 /* HERO STYLES */
 .page-hero {
@@ -104,6 +131,14 @@ img {
   max-width: 1200px;
   margin: 0 auto;
   border-radius: 30px;
+  background-image: linear-gradient(
+      rgba(30, 24, 35, 0.4),
+      rgba(30, 24, 35, 0.4)
+    ),
+    url(../images/hero/hero-background-image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 .page-hero-container {
   padding: 381px 72px 40px; /*Чому падінги до контейнера, а не до секції, як в ДЗ?*/
@@ -131,6 +166,8 @@ img {
   padding: 14px 40px;
   border: none;
   margin-right: 14px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .page-hero-link {
   display: flex;
@@ -145,13 +182,21 @@ img {
   height: 45px;
   padding-left: 20px;
   padding-right: 20px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .page-hero-scroll {
+  display: flex;
+  align-items: center;
+  column-gap: 14px;
   font-weight: 500;
   font-size: 14px;
-  line-height: 1.2;
+  line-height: 1.29;
   letter-spacing: -0.03em;
   margin-left: auto;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .page-hero-button:hover,
 .page-hero-button:focus {
@@ -166,6 +211,22 @@ img {
 .page-hero-scroll:hover,
 .page-hero-scroll:focus {
   color: #fd9222;
+}
+.page-hero-scroll-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  fill: #fd9222;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.page-hero-scroll:hover .page-hero-scroll-wrapper {
+  background-color: #fd9222;
+  fill: #ffffff;
 }
 /* BENEFITS STYLES */
 .page-benefits {
@@ -182,10 +243,20 @@ img {
 }
 .benefits-list {
   display: flex;
-  column-gap: 88px; /*Чому 88, а не 70? Чому column-gap, а не gap? */
+  column-gap: 88px; /*Чому 88, а не 70?*/
 }
 .benefits-list-item {
   width: calc((100%-2 * 88px) / 3);
+}
+.benefits-list-item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 62px;
+  height: 62px;
+  margin-bottom: 22px;
 }
 .benefits-item-name {
   font-weight: 600;
@@ -218,7 +289,7 @@ img {
 .page-ingredients-list {
   display: flex;
   flex-wrap: wrap; /*Навіщо, якщо 1 рядок?*/
-  column-gap: 19px; /*Чому column-gap, а не gap?*/
+  column-gap: 19px;
   justify-content: space-between;
 }
 .page-ingredients-list-item {
@@ -226,6 +297,8 @@ img {
   border-radius: 15px;
   border: 1px solid #fd9222;
   padding: 32px 28px;
+  position: relative;
+  overflow: hidden;
 }
 .page-ingredients-list-item-img {
   margin-bottom: 36px;
@@ -249,10 +322,58 @@ img {
   color: #ffffff;
   border-color: #1e1823;
 }
+.page-ingredients-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  color: #111111;
+  overflow: auto;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.page-ingredients-list-item:hover .page-ingredients-overlay {
+  transform: translateY(0);
+}
+.page-ingredients-title-overlay {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.page-ingredients-list-overlay {
+  display: flex;
+  column-gap: 6px;
+  margin-bottom: 14px;
+}
+.page-ingredients-item-overlay {
+  border: 1px solid #fd9222;
+  border-radius: 35px;
+  padding: 6px 16px;
+  font-size: 10px;
+  line-height: 1.2;
+}
+.page-ingredients-first-item-overlay {
+  color: #fff;
+  background: #fd9222;
+}
+.page-ingredients-second-item-overlay {
+  background-color: #fafafa;
+}
+.page-ingredients-text-overlay {
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+}
 /* HOW IT’S MADE? STYLES */
 .page-how-made-wrapper {
   display: flex;
-  column-gap: 20px; /*Чому column-gap, а не gap?*/
+  column-gap: 20px;
 }
 .page-how-made-list-container {
   flex-grow: 1;
@@ -267,26 +388,42 @@ img {
   margin-bottom: 28px;
 }
 .page-how-made-list {
-  padding-right: 32px;
+  padding-right: 26px;
 }
 .page-how-made-list-item {
   font-weight: 400; /*Для тексту в li за замовч 400px так як і для р?*/
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.02em;
+  position: relative;
+  padding-left: 16px;
 }
 .page-how-made-list-item:not(:last-child) {
   margin-bottom: 24px;
+}
+.page-how-made-list-item::before {
+  position: absolute;
+  content: '';
+  border-radius: 100%;
+  top: 4px;
+  left: 0px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4c4c4c;
+  border: 1px solid #eceded;
 }
 /* REVIEWS STYLES */
 .page-reviews {
   padding-bottom: 100px;
 }
+.page-reviews-title {
+  margin-bottom: 90px;
+}
 .page-reviews-list {
   display: flex;
-  column-gap: 28px; /*Чому не gap і justify-content: space-between?*/
+  column-gap: 28px;
   margin-bottom: 50px;
-  justify-content: space-between;
 }
 .page-reviews-list-item {
   width: calc((100% - 56px) / 3);
@@ -295,11 +432,13 @@ img {
   background-color: #ffffff;
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 15px;
+  position: relative;
 }
 .page-reviews-list-item-img {
-  margin-bottom: 18px;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .page-reviews-list-item-name {
   font-weight: 600;
@@ -328,6 +467,8 @@ img {
   border: 1px solid #fd9222;
   border-radius: 100px;
   background-color: #fafafa;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .page-reviews-button:hover,
 .page-reviews-button:focus {

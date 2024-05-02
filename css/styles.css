@@ -102,7 +102,7 @@ img {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: -0.02em;
-  display: block; /*Чому block, а не inline-block?*/
+  display: block;
   padding: 30px 0;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -243,10 +243,11 @@ img {
 }
 .benefits-list {
   display: flex;
-  column-gap: 88px; /*Чому 88, а не 70?*/
+  column-gap: 88px;
 }
 .benefits-list-item {
   width: calc((100%-2 * 88px) / 3);
+  position: relative;
 }
 .benefits-list-item-container {
   display: flex;
@@ -268,6 +269,16 @@ img {
   letter-spacing: -0.02em;
   line-height: 1.29;
   color: rgba(255, 255, 255, 0.7);
+}
+.benefits-list-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  height: 50%;
+  width: 1px;
+  right: -18px;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 /* INGREDIENTS STYLES */
 .page-ingredients-title {
@@ -391,7 +402,7 @@ img {
   padding-right: 26px;
 }
 .page-how-made-list-item {
-  font-weight: 400; /*Для тексту в li за замовч 400px так як і для р?*/
+  font-weight: 400;
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.02em;
@@ -480,7 +491,7 @@ img {
   background-color: #1e1823;
   color: #ffffff;
   padding-top: 50px;
-  padding-bottom: 50px; /*Чому не 86px як в макеті?*/
+  padding-bottom: 50px;
 }
 .page-footer-top-block {
   display: flex;
@@ -508,7 +519,7 @@ img {
   margin-bottom: 4px;
 }
 .page-footer-address-list-item-link {
-  font-weight: 400; /*Для тексту в а за замовч 400 так як і для р?*/
+  font-weight: 400;
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.02em;

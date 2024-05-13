@@ -377,19 +377,52 @@
         </div>
       </section>
       <!-- HOW IT’S MADE? -->
-      <section id="how-made" class="section-paddings">
+      <section id="how-made" class="section-how-made">
         <div class="container">
-          <h2 class="section-title">
+          <h2 class="page-how-made-title">
             HOW IT’S <span class="accent-color">MADE?</span>
           </h2>
           <div class="page-how-made-wrapper">
-            <img
-              class="page-how-made-img"
-              src="./images/how-it-is-made/how-it-is-made-logo.jpg"
-              alt="How it’s made logo"
-              width="600"
-              height="400"
-            />
+            <div class="page-how-made-img-container">
+              <picture>
+                <source
+                  srcset="
+                    ./images/how-it-is-made/how-it-is-made-logo-desk.jpg    1x,
+                    ./images/how-it-is-made/how-it-is-made-logo-desk@2x.jpg 2x
+                  "
+                  media="(min-width: 1168px)"
+                  width="600"
+                  height="400"
+                />
+                <source
+                  srcset="
+                    ./images/how-it-is-made/how-it-is-made-logo-tab.jpg    1x,
+                    ./images/how-it-is-made/how-it-is-made-logo-tab@2x.jpg 2x
+                  "
+                  media="(min-width: 768px)"
+                  width="614"
+                  height="400"
+                />
+                <source
+                  srcset="
+                    ./images/how-it-is-made/how-it-is-made-logo-mob.jpg    1x,
+                    ./images/how-it-is-made/how-it-is-made-logo-mob@2x.jpg 2x
+                  "
+                  media="(max-width: 767px)"
+                  width="335"
+                  height="500"
+                />
+                <img
+                  src="./images/how-it-is-made/how-it-is-made-logo-desk.jpg"
+                  alt="How it’s made logo"
+                  width="600"
+                  height="400"
+                />
+              </picture>
+              <svg class="page-how-made-icon" width="35" height="35">
+                <use href="./images/icons.svg#icon-play"></use>
+              </svg>
+            </div>
             <div class="page-how-made-list-container">
               <h3 class="page-how-made-list-title">
                 Try our chocolates today and discover the perfect balance of
@@ -421,9 +454,9 @@
         </div>
       </section>
       <!-- REVIEWS -->
-      <!-- <section id="reviews" class="page-reviews section-paddings">
+      <section id="reviews" class="page-reviews">
         <div class="container">
-          <h2 class="page-reviews-title section-title">
+          <h2 class="page-reviews-title">
             <span class="accent-color">CHOCOLATE</span> IS LOVED
           </h2>
           <ul class="page-reviews-list">
@@ -474,14 +507,19 @@
               </p>
             </li>
           </ul>
+          <div class="page-reviews-slide-icon-container">
+            <svg class="page-reviews-slide-icon" width="81" height="13">
+              <use href="./images/icons.svg#icon-slide"></use>
+            </svg>
+          </div>
           <button class="page-reviews-button" type="button">
             Leave a review
           </button>
         </div>
-      </section> -->
+      </section>
     </main>
     <!-- FOOTER -->
-    <!-- <footer class="page-footer">
+    <footer class="page-footer">
       <div class="container">
         <div class="page-footer-top-block">
           <h2 class="page-footer-title">
@@ -509,16 +547,26 @@
           </address>
         </div>
         <div class="page-footer-bottom-block">
-          <nav class="page-nav">
-            <ul class="page-nav-list">
+          <nav class="page-footer-nav">
+            <ul class="page-footer-nav-list">
               <li>
-                <a class="page-nav-link" href="./index.html">Home</a>
+                <a class="page-footer-nav-link" href="./index.html">Home</a>
               </li>
               <li>
-                <a class="page-nav-link" href="#how-made">How it’s made?</a>
+                <a class="page-footer-nav-link" href="#how-made"
+                  >How it’s made?</a
+                >
+              </li>
+              <li class="page-footer-nav-item-mob">
+                <a class="page-footer-nav-link" href="">Our products</a>
+              </li>
+              <li class="page-footer-nav-item-mob">
+                <a class="page-footer-nav-link" href="">Top sellers</a>
               </li>
               <li>
-                <a class="page-nav-link" href="#reviews">Chocolate is loved</a>
+                <a class="page-footer-nav-link" href="#reviews"
+                  >Chocolate is loved</a
+                >
               </li>
             </ul>
           </nav>
@@ -536,9 +584,9 @@
           </form>
         </div>
       </div>
-    </footer> -->
+    </footer>
     <!-- MODAL WINDOW -->
-    <!-- <div class="modal-overlay">
+    <div class="modal-overlay is-open">
       <div class="modal">
         <button class="modal-close-button" type="button">
           <svg class="modal-close-button-icon" width="28" height="28">
@@ -561,7 +609,7 @@
                 title="Mariia"
                 required
               />
-              <svg class="form-review-icon" width="24" height="24">
+              <svg class="form-review-icon">
                 <use href="./images/icons.svg#icon-user"></use>
               </svg>
             </div>
@@ -576,7 +624,7 @@
                 id="user-email"
                 required
               />
-              <svg class="form-review-icon" width="24" height="24">
+              <svg class="form-review-icon">
                 <use href="./images/icons.svg#icon-mail"></use>
               </svg>
             </div>
@@ -595,7 +643,7 @@
                 title="xxx-xxx-xx-xx"
                 required
               />
-              <svg class="form-review-icon" width="24" height="24">
+              <svg class="form-review-icon">
                 <use href="./images/icons.svg#icon-phone"></use>
               </svg>
             </div>
@@ -628,16 +676,18 @@
                 >
                   <use href="./images/icons.svg#icon-check"></use></svg
               ></span>
-              I accept the terms and conditions of the
-              <a class="form-review-checkbox-label-part" href=""
-                >Privacy Policy</a
+              <span
+                >I accept the terms and conditions of the
+                <a class="form-review-checkbox-label-part" href=""
+                  >Privacy Policy</a
+                ></span
               ></label
             >
           </div>
           <button class="form-review-button" type="submit">Send</button>
         </form>
       </div>
-    </div> -->
+    </div>
     <!-- MOBILE MENU -->
     <div class="mobile-menu">
       <div class="container mobile-menu-container">

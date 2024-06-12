@@ -518,7 +518,12 @@
               <use href="./images/icons.svg#icon-slide"></use>
             </svg>
           </div>
-          <button class="page-reviews-button" type="button">
+          <button
+            class="page-reviews-button js-open-modal"
+            type="button"
+            aria-expanded="false"
+            aria-controls="modal-window"
+          >
             Leave a review
           </button>
         </div>
@@ -592,9 +597,9 @@
       </div>
     </footer>
     <!-- MODAL WINDOW -->
-    <div class="modal-overlay">
+    <div class="modal-overlay js-modal-container" id="modal-window">
       <div class="modal">
-        <button class="modal-close-button" type="button">
+        <button class="modal-close-button js-close-modal" type="button">
           <svg class="modal-close-button-icon" width="28" height="28">
             <use href="./images/icons.svg#icon-close"></use>
           </svg>
@@ -751,5 +756,6 @@
     ></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="module" src="./js/mobile-menu.js"></script>
+    <script type="module" src="./js/modal-window.js"></script>
   </body>
 </html>

@@ -1,2 +1,2 @@
-# goit-markup-cw-01
-This is classwork project №1
+#SimplyChocolate
+A website for chocolate product company. Adaptive design, transform effects, modal window, mobile menu (open/close), favicon.
